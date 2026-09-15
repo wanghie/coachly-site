@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy — Coachly</title>
+<meta name="description" content="What Coachly reads, why it reads it, where it is stored, and how to delete it.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap bar">
+  <a class="logo" href="index.html" style="color:inherit;text-decoration:none"><span class="dot"></span>Coachly</a>
+  <nav><a href="index.html">Home</a><a href="terms.html">Terms</a></nav>
+</div></header>
+<main class="wrap legal">
+<h1 style="font-size:36px">Privacy</h1>
+<p class="lede">Last updated 15 September 2026. Coachly is in development; this page describes the product as built and is updated when the data flow changes.</p>
+
+<h2>What Coachly reads, and why</h2>
+<table>
+  <tr><th>Source</th><th>What we read</th><th>Why</th></tr>
+  <tr><td>Google Calendar</td><td>Event titles, times, attendee count</td><td>To place work inside blocks you already have, and to detect meeting overload</td></tr>
+  <tr><td>Gmail</td><td>Counts and timestamps of messages you sent</td><td>Outreach volume and reply time. We do not read message bodies</td></tr>
+  <tr><td>Stripe</td><td>MRR, new customers</td><td>To tie today's work to this month's revenue</td></tr>
+  <tr><td>Apple Health / Health Connect</td><td>Sleep hours, workout minutes, steps</td><td>Safety valves. Two nights under six hours drops your load</td></tr>
+  <tr><td>You</td><td>Goals, constraints, what you are avoiding, why you missed a day</td><td>The plan is unusable without it</td></tr>
+</table>
+<p>Every connection is optional and separately revocable. Coachly works with none of them connected — it just refuses to show a Form score built on nothing.</p>
+
+<h2>What is encrypted on your device</h2>
+<p>When you miss a day and explain why, the words you typed are encrypted on your phone with AES-256-GCM before they are sent. The key is generated once, stored in the device keychain, and does not travel to a backup or another device. Anyone holding our database credentials sees ciphertext.</p>
+<p>The trade is real and you should know it: <strong>lose the device and those notes are unrecoverable.</strong> A short summary — written to avoid judgment words — is stored in plain text so the coach can remember the pattern.</p>
+
+<h2>Where it lives</h2>
+<p>Supabase (Postgres), row-level security on every table, scoped so one account can only reach its own rows. Model calls go to Anthropic. We do not sell data, we do not share it with advertisers, and we do not use your content to train models.</p>
+
+<h2>Deleting it</h2>
+<p>Settings → Delete account removes your rows, or email <a href="mailto:hello@coachly.build">hello@coachly.build</a>. Deletion is immediate and not reversible. Disconnecting a source stops new reads and removes what that source wrote.</p>
+
+<h2>Children</h2>
+<p>Coachly is for adults running businesses. It is not directed at anyone under 18.</p>
+
+<h2>What Coachly is not</h2>
+<p>Not a medical or mental-health service, not a licensed financial adviser. It does not diagnose, it does not prescribe, and it will not tell you to spend, borrow, or bet on a business decision.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:hello@coachly.build">hello@coachly.build</a></p>
+</main>
+<footer><div class="wrap"><p>Coachly · <a href="index.html">Home</a> · <a href="terms.html">Terms</a></p></div></footer>
+</body></html>

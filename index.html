@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coachly — a coach that reads your calendar, not your to-do list</title>
+<meta name="description" content="A 1:1 coach for operators. It assigns one thing a day, measures it against real data — calendar, revenue, sleep — and changes the plan when you slip.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="wrap bar">
+  <div class="logo"><span class="dot"></span>Coachly</div>
+  <nav><a href="#how">How it works</a><a href="#different">Different</a><a href="privacy.html">Privacy</a></nav>
+</div></header>
+
+<main class="wrap">
+  <p class="eyebrow" style="margin-top:64px">Personal AI coach · iOS · Android · Web</p>
+  <h1>One thing today.<br>Measured against real data.</h1>
+  <p class="lede">Coachly reads your calendar, your revenue and your sleep, then assigns the single thing that moves the number. It tells you what it cut, and why. When you slip, it asks once — then changes the method, not the goal.</p>
+
+  <div class="row">
+    <a class="btn" href="#how">See how it decides</a>
+    <a class="btn btn-ghost" href="mailto:hello@coachly.build">Get the early build</a>
+  </div>
+  <p class="note">In development. No signup, no waitlist theatre — email if you want in.</p>
+
+  <div class="today">
+    <span class="tag">THE 20%</span>
+    <div class="t">Send 10 first-contact messages</div>
+    <p style="margin:0;color:var(--ink-2);font-size:15px">Step 12 of 90 to $10k MRR · measured by thread count · fits your 09:30 block</p>
+    <div class="cut">Cut today, and here is why:
+      <br><s>Redesign the pricing page</s> — real work, wrong week. It does not move pipeline.
+      <br><s>Edit Thursday's video</s> — buy this one. $150–400 an editor. Your hour costs more.
+    </div>
+  </div>
+
+  <h2 id="how">How it decides</h2>
+  <div class="card"><strong>1 · It reads what already happened</strong><p>Calendar, Stripe, Health, mail. Nothing in the signal registry means no task — the coach is not allowed to invent work it cannot measure.</p></div>
+  <div class="card"><strong>2 · It runs money → machine → you</strong><p>Can this be bought? Say the price. Can it be automated? Say how. Only what is left reaches your hands. The cheapest task is the one you never do.</p></div>
+  <div class="card"><strong>3 · Nine gates, in code</strong><p>The model writes the sentence. Code decides whether the task ships: budget, repeats, safety, and whether it lands on a block you marked untouchable.</p></div>
+  <div class="card"><strong>4 · Three touches, one task</strong><p>07:00 assigns. 13:00 asks where you are stuck. 21:00 closes the day. No new work after 07:00 — three touches with three new tasks is harassment, and that is when people mute an app.</p></div>
+
+  <h2 id="different">What it refuses to do</h2>
+  <table>
+    <tr><th>Most apps</th><th>Coachly</th></tr>
+    <tr><td>Three tasks, equal weight</td><td>One task, plus the list it cut and why</td></tr>
+    <tr><td>A parallel calendar</td><td>Work goes into blocks you already have</td></tr>
+    <tr><td>Streaks and penalties</td><td>Form 0–100. It reflects, it does not punish</td></tr>
+    <tr><td>Silence when you slip</td><td>One question, skippable, then the method changes</td></tr>
+    <tr><td>More when you are drowning</td><td>Two nights under six hours drops your load 40%</td></tr>
+    <tr><td>Blames you when numbers stall</td><td>If the work happened, it questions the plan, not you</td></tr>
+  </table>
+
+  <h2>Your data</h2>
+  <p class="lede" style="font-size:17px">What you say when you miss a day is encrypted on your device before it leaves. Whoever holds the database keys sees noise. Read the <a href="privacy.html">privacy page</a> — it is short and it is specific.</p>
+</main>
+
+<footer><div class="wrap">
+  <p>Coachly · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="mailto:hello@coachly.build">hello@coachly.build</a></p>
+  <p class="note">Coachly is not a medical, mental-health or financial service. It does not give investment advice.</p>
+</div></footer>
+</body></html>
