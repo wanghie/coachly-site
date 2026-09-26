@@ -14,28 +14,30 @@
 </div></header>
 <main class="wrap legal">
 <h1 style="font-size:36px">Privacy</h1>
-<p class="lede">Last updated 15 September 2026. Coachly is in development; this page describes the product as built and is updated when the data flow changes.</p>
+<p class="lede">Last updated 25 September 2026. Coachly is in development; this page describes the product as built and is updated when the data flow changes.</p>
 
 <h2>What Coachly reads, and why</h2>
-<table>
-  <tr><th>Source</th><th>What we read</th><th>Why</th></tr>
-  <tr><td>Google Calendar</td><td>Event titles, times, attendee count</td><td>To place work inside blocks you already have, and to detect meeting overload</td></tr>
-  <tr><td>Gmail</td><td>Counts and timestamps of messages you sent</td><td>Outreach volume and reply time. We do not read message bodies</td></tr>
-  <tr><td>Stripe</td><td>MRR, new customers</td><td>To tie today's work to this month's revenue</td></tr>
-  <tr><td>Apple Health / Health Connect</td><td>Sleep hours, workout minutes, steps</td><td>Safety valves. Two nights under six hours drops your load</td></tr>
-  <tr><td>You</td><td>Goals, constraints, what you are avoiding, why you missed a day</td><td>The plan is unusable without it</td></tr>
-</table>
-<p>Every connection is optional and separately revocable. Coachly works with none of them connected — it just refuses to show a Form score built on nothing.</p>
 
-<h2>What is encrypted on your device</h2>
-<p>When you miss a day and explain why, the words you typed are encrypted on your phone with AES-256-GCM before they are sent. The key is generated once, stored in the device keychain, and does not travel to a backup or another device. Anyone holding our database credentials sees ciphertext.</p>
-<p>The trade is real and you should know it: <strong>lose the device and those notes are unrecoverable.</strong> A short summary — written to avoid judgment words — is stored in plain text so the coach can remember the pattern.</p>
+<h3>Collected today</h3>
+<table>
+  <tr><th>Source</th><th>What we collect</th><th>Why</th></tr>
+  <tr><td>Account</td><td>Your Apple or Google sign-in identifier — or nothing, if you use an anonymous free account</td><td>To keep your data attached to you across sessions</td></tr>
+  <tr><td>Email</td><td>Only if you sign in with Apple or Google</td><td>Account recovery and support</td></tr>
+  <tr><td>Onboarding answers</td><td>Goals, constraints, what you are avoiding</td><td>The plan is unusable without it</td></tr>
+  <tr><td>Plan and habits</td><td>Tasks assigned, habits tracked, completion state</td><td>To run the daily assignment and compute Form</td></tr>
+  <tr><td>Chat messages</td><td>What you type to the coach</td><td>To generate the coach's reply — see "Where it lives" below</td></tr>
+</table>
+
+<h3>What we do not collect</h3>
+<p>Coachly does not connect to your calendar, email, payment accounts or health data, and it does not ask for access to your photos, contacts or location.</p>
 
 <h2>Where it lives</h2>
-<p>Supabase (Postgres), row-level security on every table, scoped so one account can only reach its own rows. Model calls go to Anthropic. We do not sell data, we do not share it with advertisers, and we do not use your content to train models.</p>
+<p>Supabase (Postgres), row-level security on every table, scoped so one account can only reach its own rows.</p>
+<p><strong>Third-party AI provider: Anthropic.</strong> When you send a chat message, it is routed through a Supabase Edge Function to Anthropic (maker of Claude) to generate the coach's reply. What we send: the text of your message, your last few chat messages, your onboarding answers (goals and what you are avoiding), and a summary of this week's plan and habits — nothing else from your account. Anthropic does not use this content to train its models. The first time you chat, Coachly asks you to confirm before anything is sent; you can decline and Coachly will not send that message. You can withdraw this later in Settings → AI coach data sharing; from then on nothing is sent to Anthropic until you allow it again.</p>
+<p>We do not sell data and we do not share it with advertisers.</p>
 
 <h2>Deleting it</h2>
-<p>Settings → Delete account removes your rows, or email <a href="mailto:hello@coachly.build">hello@coachly.build</a>. Deletion is immediate and not reversible. Disconnecting a source stops new reads and removes what that source wrote.</p>
+<p>Settings → My account → Delete account removes your rows immediately, or email <a href="mailto:hello@coachly.build">hello@coachly.build</a>. Deletion is immediate and not reversible.</p>
 
 <h2>Children</h2>
 <p>Coachly is for adults running businesses. It is not directed at anyone under 18.</p>
